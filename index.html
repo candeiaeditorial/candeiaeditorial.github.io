@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candeia Editorial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="Início">
+    <img src="logo.png" alt="Logo Candeia" />
+    Candeia Editorial
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Candeia Editorial</h1>
+    <p class="role">Trajetos · Distâncias · Livros</p>
+    <div class="hero-social" aria-label="Links sociais">
+      <a href="https://www.instagram.com/candeiaeditorial" target="_blank" rel="noopener" class="social-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @candeiaeditorial
+      </a>
+      <a href="https://substack.com/@candeiaeditorial" target="_blank" rel="noopener" class="social-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Newsletter
+      </a>
+    </div>
+    <p class="hero-bio">
+      A casa fez-se distância, transformou-se, em algum momento, no próprio trajeto. Invertemos os polos: o porto como embargo às viagens futuras, a ânsia incessante de <span class="hl-wave">não-ser</span>. O corpo que o mesmo corpo arrasta pela manhã ainda escura, pela noite escura mais uma vez. Como não baixar a testa, não contemplar o dorso dos sapatos? A sombra assopra a dúvida, <span class="hl">treme a chama</span>, o mundo não parece valer a aposta.<br><br>
+      E no entanto, contraintuitiva, <span class="hl">essa candeia ainda queima</span> — dentro de umas retinas, no bolso de uma mochila, no fundo de um porta-luvas. A cada passo, esta vida renova suas bordas, e a distância — <span class="hl-green">breve remédio</span> — faz-se casa portátil, rumo reverso. Em nossa <span class="hl-wave">transumância</span>, ao menos, contá-la.
+    </p>
+    <a href="#sobre" class="btn-learn">
+      Sobre
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="abstract-art">
+      <img src="logo.png" alt="Logo Candeia" />
+    </div>
+  </div>
+</section>
+
+<div class="sections">
+
+  <section class="section" id="catalogo">
+    <p class="section-label">Catálogo</p>
+    <p class="section-lead">Publicações que estão por vir.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-cover">
+          <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjIwIDMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2M4ZDBlNCIvPgogIDxnIGZpbGw9InJnYmEoNDIsNDgsNzIsMC4xMikiPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iNDgiIGN5PSIyMCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iNzYiIGN5PSIyMCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTA0IiBjeT0iMjAiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjEzMiIgY3k9IjIwIiByPSIyLjUiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIyMCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTg4IiBjeT0iMjAiIHI9IjIuNSIvPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSI0OCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iNzYiIGN5PSI0OCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTA0IiBjeT0iNDgiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjEzMiIgY3k9IjQ4IiByPSIyLjUiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSI0OCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTg4IiBjeT0iNDgiIHI9IjIuNSIvPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSI3NiIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iNDgiIGN5PSI3NiIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iNzYiIGN5PSI3NiIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTA0IiBjeT0iNzYiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjEzMiIgY3k9Ijc2IiByPSIyLjUiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSI3NiIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTg4IiBjeT0iNzYiIHI9IjIuNSIvPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSIxMDQiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjQ4IiBjeT0iMTA0IiByPSIyLjUiLz48Y2lyY2xlIGN4PSI3NiIgY3k9IjEwNCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTA0IiBjeT0iMTA0IiByPSIyLjUiLz48Y2lyY2xlIGN4PSIxMzIiIGN5PSIxMDQiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjEwNCIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTg4IiBjeT0iMTA0IiByPSIyLjUiLz4KICAgIDxjaXJjbGUgY3g9IjIwIiBjeT0iMTMyIiByPSIyLjUiLz48Y2lyY2xlIGN4PSI0OCIgY3k9IjEzMiIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iNzYiIGN5PSIxMzIiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjEwNCIgY3k9IjEzMiIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTMyIiBjeT0iMTMyIiByPSIyLjUiLz48Y2lyY2xlIGN4PSIxNjAiIGN5PSIxMzIiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjE4OCIgY3k9IjEzMiIgcj0iMi41Ii8+CiAgPC9nPgogIDxwb2x5bGluZSBwb2ludHM9IjI4LDExMCA1OCw3MiA5Niw4OCAxNDAsNTIgMTkwLDY4IiBzdHJva2U9InJnYmEoNDIsNDgsNzIsMC41KSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMyIvPgogIDxjaXJjbGUgY3g9IjI4IiBjeT0iMTEwIiByPSI1IiBmaWxsPSIjMmEzMDQ4Ii8+CiAgPGNpcmNsZSBjeD0iMTQwIiBjeT0iNTIiIHI9IjUiIGZpbGw9IiMyYTMwNDgiLz4KICA8Y2lyY2xlIGN4PSIxOTAiIGN5PSI2OCIgcj0iNSIgZmlsbD0iIzJhMzA0OCIvPgogIDxsaW5lIHgxPSIxNiIgeTE9IjE1NSIgeDI9IjIwNCIgeTI9IjE1NSIgc3Ryb2tlPSJyZ2JhKDQyLDQ4LDcyLDAuMikiIHN0cm9rZS13aWR0aD0iMC41Ii8+CiAgPHRleHQgeD0iMTYiIHk9IjE4MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiMyYTMwNDgiIGZvbnQtd2VpZ2h0PSJib2xkIj5Qb3Rvc8OtLDwvdGV4dD4KICA8dGV4dCB4PSIxNiIgeT0iMTk4IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzJhMzA0OCIgZm9udC13ZWlnaHQ9ImJvbGQiPkNvbmNlcGNpw7NuLDwvdGV4dD4KICA8dGV4dCB4PSIxNiIgeT0iMjE2IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzJhMzA0OCIgZm9udC13ZWlnaHQ9ImJvbGQiPkZlcm5hbmRvIGRlIGxhIE1vcmE8L3RleHQ+CiAgPGxpbmUgeDE9IjE2IiB5MT0iMjI4IiB4Mj0iODAiIHkyPSIyMjgiIHN0cm9rZT0iIzc4ODhhZiIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KICA8dGV4dCB4PSIxNiIgeT0iMjQ2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5IiBmaWxsPSJyZ2JhKDQyLDQ4LDcyLDAuNTUpIiBsZXR0ZXItc3BhY2luZz0iMSI+VsONVE9SIFJJQkVJUk8tU0FOVE9TPC90ZXh0PgogIDx0ZXh0IHg9IjE2IiB5PSIyODYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjgiIGZpbGw9InJnYmEoNDIsNDgsNzIsMC4zNSkiIGxldHRlci1zcGFjaW5nPSIyIj5DQU5ERUlBPC90ZXh0Pgo8L3N2Zz4=" alt="Capa: Potosí, Concepción, Fernando de la Mora" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vítor Ribeiro-Santos</span>
+          <h3 class="card-title">Potosí, Concepción, Fernando de la Mora</h3>
+          <span class="card-meta">Zine · 2026</span>
+          <a href="https://benfeitoria.com/projeto/zine-potosi-concepcion-fernando-de-la-mora-26jd" class="card-link">Saiba mais — Pré-venda</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-cover">
+          <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjIwIDMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2RkZTJlZSIvPgogIDxlbGxpcHNlIGN4PSIxMTAiIGN5PSIzMjAiIHJ4PSIxNzAiIHJ5PSIxMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg0Miw0OCw3MiwwLjEpIiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDxlbGxpcHNlIGN4PSIxMTAiIGN5PSIzMjAiIHJ4PSIxMzgiIHJ5PSIxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg0Miw0OCw3MiwwLjEpIiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDxlbGxpcHNlIGN4PSIxMTAiIGN5PSIzMjAiIHJ4PSIxMDYiIHJ5PSI3NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDQyLDQ4LDcyLDAuMSkiIHN0cm9rZS13aWR0aD0iMS4yIi8+CiAgPGVsbGlwc2UgY3g9IjExMCIgY3k9IjMyMCIgcng9Ijc0IiByeT0iNTMiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg0Miw0OCw3MiwwLjEpIiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDxsaW5lIHgxPSIxMTAiIHkxPSIxNjUiIHgyPSIxMTAiIHkyPSIzMjAiIHN0cm9rZT0icmdiYSg0Miw0OCw3MiwwLjA3KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iMTAiIHk9IjEzOCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTE4IiBmaWxsPSJyZ2JhKDEyMCwxMzYsMTc1LDAuMjIpIiBmb250LXdlaWdodD0iYm9sZCI+VDwvdGV4dD4KICA8bGluZSB4MT0iMTYiIHkxPSIxNTUiIHgyPSIyMDQiIHkyPSIxNTUiIHN0cm9rZT0icmdiYSg0Miw0OCw3MiwwLjE1KSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz4KICA8dGV4dCB4PSIxNiIgeT0iMTgwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzJhMzA0OCIgZm9udC13ZWlnaHQ9ImJvbGQiPlRpcG9ncmFmaWE8L3RleHQ+CiAgPHRleHQgeD0iMTYiIHk9IjIwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMyYTMwNDgiIGZvbnQtd2VpZ2h0PSJib2xkIj5kZSBlc3TDoWRpbzwvdGV4dD4KICA8bGluZSB4MT0iMTYiIHkxPSIyMTIiIHgyPSI4MCIgeTI9IjIxMiIgc3Ryb2tlPSIjNzg4OGFmIiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDx0ZXh0IHg9IjE2IiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZpbGw9InJnYmEoNDIsNDgsNzIsMC41NSkiIGxldHRlci1zcGFjaW5nPSIxIj5CSUFOQ0EgTVVOSVo8L3RleHQ+CiAgPHRleHQgeD0iMTYiIHk9IjI4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0icmdiYSg0Miw0OCw3MiwwLjM1KSIgbGV0dGVyLXNwYWNpbmc9IjIiPkNBTkRFSUE8L3RleHQ+Cjwvc3ZnPg==" alt="Capa: Tipografia de estádio" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Bianca Muniz</span>
+          <h3 class="card-title">Tipografia de estádio</h3>
+          <span class="card-meta">Zine · 2026</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-cover">
+          <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjIwIDMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2U4ZWFmNCIvPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJzaGFmdDMiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgxMjAsMTM2LDE3NSwwLjcpIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0icmdiYSgxMjAsMTM2LDE3NSwwKSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iOTAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxNTAiIGZpbGw9InVybCgjc2hhZnQzKSIvPgogIDxjaXJjbGUgY3g9IjExMCIgY3k9IjEwIiByPSIyMCIgZmlsbD0icmdiYSgxMjAsMTM2LDE3NSwwLjg1KSIvPgogIDxsaW5lIHgxPSIwIiB5MT0iMTUwIiB4Mj0iMjIwIiB5Mj0iMTUwIiBzdHJva2U9InJnYmEoNDIsNDgsNzIsMC4yKSIgc3Ryb2tlLXdpZHRoPSIwLjc1Ii8+CiAgPHJlY3QgeD0iMCIgeT0iMTUwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE1MCIgZmlsbD0icmdiYSg0Miw0OCw3MiwwLjA2KSIvPgogIDx0ZXh0IHg9IjE2IiB5PSIxODIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMmEzMDQ4IiBmb250LXdlaWdodD0iYm9sZCI+Tm8gbWVpby1kaWE8L3RleHQ+CiAgPHRleHQgeD0iMTYiIHk9IjIwMiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMyYTMwNDgiIGZvbnQtd2VpZ2h0PSJib2xkIj5kYXMgY29pc2FzPC90ZXh0PgogIDxsaW5lIHgxPSIxNiIgeTE9IjIxNCIgeDI9IjgwIiB5Mj0iMjE0IiBzdHJva2U9IiM3ODg4YWYiIHN0cm9rZS13aWR0aD0iMS4yIi8+CiAgPHRleHQgeD0iMTYiIHk9IjIzMiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOSIgZmlsbD0icmdiYSg0Miw0OCw3MiwwLjU1KSIgbGV0dGVyLXNwYWNpbmc9IjEiPlbDjVRPUiBSSUJFSVJPLVNBTlRPUzwvdGV4dD4KICA8dGV4dCB4PSIxNiIgeT0iMjg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSJyZ2JhKDQyLDQ4LDcyLDAuMzUpIiBsZXR0ZXItc3BhY2luZz0iMiI+Q0FOREVJQTwvdGV4dD4KPC9zdmc+" alt="Capa: No meio-dia das coisas" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vítor Ribeiro-Santos</span>
+          <h3 class="card-title">No meio-dia das coisas</h3>
+          <span class="card-meta">Livro · 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <p class="section-label">Sobre</p>
+    <div class="sobre-text">
+      <p>Candeia é uma editora que quer iluminar algumas ruas escuras de tantos arredores: <span class="hl-green">trazer ao lume os trajetos</span>, esta porção imensa da vida que sempre é privada de conto, de conhecimento, de proposta. Queremos usar esta pequena chama para publicar autores e autoras que escrevem o hoje em suas esquinas — o testemunho literário da <span class="hl">necessidade incessante de estar em outra parte</span>.</p>
+      <p>Viemos, afinal, de um mundo em que os relatos de viagem eram a base de toda uma literatura, de toda a iminente sabedoria que o desconhecido poderia oferecer. Hoje, percorrer distâncias é justamente <span class="hl">a parte desprezada da experiência moderna</span> — a mais violenta, a mais desconfortável. O mundo se expandiu, enquanto o horizonte parece ter se encurtado.</p>
+      <p>Por isso, a linha editorial da Candeia quer olhar para o <span class="hl-wave">entre-espaço</span>, para vozes e temas que ofereçam perspectivas sobre onde, em meio a tanto cansaço, seja possível ainda tecer uma experiência. <span class="hl-green">Migração, imigração, êxodo, fluxo</span> são conceitos que refletem perdas e novos enraizamentos: aí parece estar o caminho para desafiar os esforços de limitar o alcance, dizer que as coisas são como são.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-title">Equipe</p>
+    <div class="card-grid">
+      <div class="card card--team">
+        <div class="card-body">
+          <h3 class="card-title">Vítor Ribeiro-Santos</h3>
+          <span class="card-meta">Edição · Revisão · Tradução</span>
+        </div>
+      </div>
+      <div class="card card--team">
+        <div class="card-body">
+          <h3 class="card-title">Bianca Muniz</h3>
+          <span class="card-meta">Edição · Comunicação</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-social" aria-label="Links sociais">
+      <a href="https://www.instagram.com/candeiaeditorial" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://substack.com/@candeiaeditorial" target="_blank" rel="noopener">Substack</a>
+    </div>
+    <p class="footer-copy">© 2026 Candeia Editorial</p>
+  </div>
+</footer>
+
+</body>
+</html>
