@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Candeia Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ── PALETA
+   --papel:   #f0ead8   fundo principal (creme quente)
+   --azul:    #1b4f72   azul petróleo escuro
+   --azul-md: #2471a3   azul médio
+   --ouro:    #c9963a   dourado da logo
+   --ouro-cl: #e8c46a   dourado claro/glow
+   --tinta:   #1a1612   quase preto
+   --cinza:   #8c8278   texto secundário
+*/
+
+:root{
+  --papel:#f0ead8;
+  --azul:#1b4f72;
+  --ouro:#c9963a;
+  --ouro-cl:#e8c46a;
+  --tinta:#1a1612;
+  --cinza:#8c8278;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--papel);
+  color:var(--tinta);
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:rgba(240,234,216,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(201,150,58,.2);
+}
+.nav-logo{
+  display:flex;align-items:center;gap:.6rem;
+  text-decoration:none;
+}
+.nav-logo img{
+  height:22px;
+  filter:sepia(1) saturate(1.2) hue-rotate(-10deg) brightness(.85);
+}
+.nav-logo-text{
+  font-family:'Playfair Display',serif;
+  font-size:.82rem;font-weight:700;
+  color:var(--azul);letter-spacing:.02em;
+}
+.nav-links{
+  display:flex;gap:2rem;list-style:none;
+}
+.nav-links a{
+  font-size:.75rem;font-weight:500;
+  color:var(--cinza);letter-spacing:.08em;
+  text-transform:uppercase;text-decoration:none;
+  transition:color .15s;
+}
+.nav-links a:hover{color:var(--ouro);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:var(--azul);
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:7rem 2.5rem 4rem;
+  position:relative;
+  overflow:hidden;
+}
+/* glow central como na logo */
+.hero::before{
+  content:'';
+  position:absolute;
+  top:30%;left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;height:600px;
+  background:radial-gradient(ellipse, rgba(232,196,106,.18) 0%, rgba(201,150,58,.06) 40%, transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1100px;margin:0 auto;width:100%;
+  position:relative;z-index:1;
+}
+.hero-eyebrow{
+  font-size:.68rem;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(232,196,106,.6);
+  margin-bottom:1.5rem;display:block;
+}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3.5rem,9vw,8rem);
+  font-weight:900;line-height:.95;
+  color:var(--papel);
+  margin-bottom:1.5rem;
+  letter-spacing:-.02em;
+}
+.hero-h1 em{
+  font-style:italic;
+  color:var(--ouro-cl);
+  display:block;
+}
+.hero-sub{
+  font-size:clamp(.9rem,1.5vw,1.1rem);
+  color:rgba(240,234,216,.5);
+  max-width:52ch;
+  line-height:1.75;
+  font-weight:300;
+  margin-bottom:3rem;
+}
+.hero-pills{display:flex;gap:.8rem;flex-wrap:wrap;}
+.hero-pill{
+  font-size:.73rem;font-weight:500;
+  letter-spacing:.05em;
+  color:rgba(232,196,106,.7);
+  border:1px solid rgba(232,196,106,.25);
+  border-radius:1px;
+  padding:.3rem .9rem;
+  text-decoration:none;
+  transition:all .2s;
+}
+.hero-pill:hover{
+  color:var(--ouro-cl);
+  border-color:rgba(232,196,106,.6);
+  background:rgba(232,196,106,.06);
+}
+.hero-scroll{
+  position:absolute;bottom:2.5rem;right:2.5rem;
+  font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(240,234,216,.25);
+  writing-mode:vertical-rl;
+}
+
+/* ── MANIFESTO ── */
+.manifesto{
+  padding:6rem 2.5rem;
+  background:var(--papel);
+}
+.manifesto-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 2fr;
+  gap:5rem;align-items:start;
+}
+.manifesto-label{
+  font-size:.65rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro);
+  padding-top:.4rem;
+  position:sticky;top:5rem;
+}
+.manifesto-body{}
+.manifesto-pull{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,3rem);
+  font-weight:700;line-height:1.2;
+  color:var(--azul);
+  margin-bottom:2rem;
+}
+.manifesto-pull em{font-style:italic;font-weight:400;}
+.manifesto-cols{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2rem;
+}
+.manifesto-cols p{
+  font-size:.97rem;color:#4a4540;
+  line-height:1.95;font-weight:300;
+}
+.mk-r{
+  background:rgba(201,150,58,.15);
+  border-bottom:1.5px solid rgba(201,150,58,.5);
+  padding:0 2px;font-style:italic;
+}
+.mk-g{
+  background:rgba(27,79,114,.1);
+  border-bottom:1.5px solid rgba(27,79,114,.3);
+  padding:0 2px;
+}
+.mk-w{
+  text-decoration:underline wavy rgba(201,150,58,.5);
+  text-underline-offset:3px;font-style:italic;
+}
+
+/* ── SOBRE ── */
+.sobre{
+  background:var(--azul);
+  padding:6rem 2.5rem;
+  position:relative;overflow:hidden;
+}
+.sobre::after{
+  content:'';
+  position:absolute;bottom:-100px;right:-100px;
+  width:500px;height:500px;
+  background:radial-gradient(ellipse, rgba(232,196,106,.08) 0%, transparent 65%);
+  pointer-events:none;
+}
+.sobre-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.sobre-top{
+  display:flex;align-items:baseline;gap:2rem;
+  margin-bottom:3rem;
+}
+.sobre-label{
+  font-size:.65rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(232,196,106,.5);flex-shrink:0;
+}
+.sobre-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:700;color:var(--papel);
+  line-height:1.15;
+}
+.sobre-title em{font-style:italic;color:var(--ouro-cl);}
+.sobre-cols{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(240,234,216,.1);
+}
+.sobre-col{
+  padding:2rem 1.8rem;
+  background:rgba(27,79,114,.6);
+  border-top:2px solid rgba(201,150,58,.4);
+  transition:background .25s;
+}
+.sobre-col:hover{background:rgba(36,113,163,.4);}
+.sobre-col h3{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;
+  color:var(--papel);margin-bottom:.7rem;
+}
+.sobre-col p{
+  font-size:.86rem;color:rgba(240,234,216,.55);
+  line-height:1.85;font-weight:300;
+}
+
+/* ── CATALOGO ── */
+.catalogo{
+  padding:6rem 2.5rem;
+  background:var(--papel);
+}
+.catalogo-inner{max-width:1100px;margin:0 auto;}
+.catalogo-header{
+  display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:4rem;
+  border-bottom:1px solid rgba(201,150,58,.25);
+  padding-bottom:1rem;
+}
+.catalogo-label{
+  font-size:.65rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro);
+}
+.catalogo-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.5rem);
+  font-weight:700;color:var(--azul);
+}
+
+/* livro em destaque */
+.livro-destaque{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  margin-bottom:5rem;
+  padding-bottom:5rem;
+  border-bottom:1px solid rgba(201,150,58,.15);
+}
+.livro-destaque.rev{direction:rtl;}
+.livro-destaque.rev > *{direction:ltr;}
+.livro-visual{
+  aspect-ratio:3/4;
+  background:var(--azul);
+  border-radius:2px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.livro-visual::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 60%, rgba(232,196,106,.25) 0%, transparent 65%);
+}
+.livro-num{
+  font-family:'Playfair Display',serif;
+  font-size:8rem;font-weight:900;
+  color:rgba(240,234,216,.06);
+  position:absolute;bottom:-1rem;right:.5rem;
+  line-height:1;
+  z-index:0;
+}
+.livro-title-big{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,4vw,3rem);
+  font-weight:700;font-style:italic;
+  color:var(--ouro-cl);
+  text-align:center;
+  position:relative;z-index:1;
+  line-height:1.15;
+  padding:2rem;
+}
+.livro-info{}
+.livro-tipo{
+  font-size:.62rem;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ouro);margin-bottom:.8rem;display:block;
+}
+.livro-h{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.5rem);
+  font-weight:700;line-height:1.15;
+  color:var(--azul);margin-bottom:.3rem;
+}
+.livro-autor{
+  font-size:.88rem;color:var(--cinza);
+  margin-bottom:.8rem;
+}
+.livro-badge{
+  display:inline-block;
+  font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid rgba(201,150,58,.4);
+  color:var(--ouro);border-radius:1px;
+  padding:.2rem .65rem;margin-bottom:1.2rem;
+}
+.livro-desc{
+  font-size:.93rem;color:#4a4540;
+  line-height:1.9;font-weight:300;max-width:48ch;
+  margin-bottom:1.5rem;
+}
+.livro-meta{
+  background:rgba(27,79,114,.07);
+  border-left:2px solid rgba(201,150,58,.35);
+  padding:1rem 1.2rem;
+  margin-bottom:1.5rem;border-radius:1px;
+}
+.livro-meta strong{
+  display:block;font-size:.6rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ouro);margin-bottom:.3rem;
+}
+.livro-meta p{font-size:.82rem;color:#5a5450;line-height:1.7;}
+.livro-cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.78rem;font-weight:500;letter-spacing:.05em;
+  color:var(--papel);background:var(--azul);
+  border-radius:1px;padding:.55rem 1.4rem;
+  text-decoration:none;transition:background .2s;
+}
+.livro-cta:hover{background:#2471a3;}
+
+/* livros menores em grid */
+.livros-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:2rem;
+}
+.livro-card{
+  display:grid;grid-template-columns:120px 1fr;
+  gap:1.5rem;align-items:start;
+  padding:1.5rem;
+  border:1px solid rgba(201,150,58,.15);
+  border-radius:1px;
+  transition:border-color .2s,background .2s;
+}
+.livro-card:hover{
+  border-color:rgba(201,150,58,.4);
+  background:rgba(27,79,114,.03);
+}
+.livro-card-visual{
+  aspect-ratio:3/4;
+  background:var(--azul);
+  border-radius:1px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.livro-card-visual::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 60%, rgba(232,196,106,.15) 0%, transparent 65%);
+}
+.livro-card-num{
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;font-weight:900;font-style:italic;
+  color:rgba(240,234,216,.15);
+  position:relative;z-index:1;
+}
+.livro-card-tipo{
+  font-size:.58rem;font-weight:500;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ouro);margin-bottom:.4rem;display:block;
+}
+.livro-card-h{
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;font-weight:700;
+  color:var(--azul);line-height:1.2;margin-bottom:.2rem;
+}
+.livro-card-autor{font-size:.8rem;color:var(--cinza);margin-bottom:.6rem;}
+.livro-card-badge{
+  display:inline-block;font-size:.58rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid rgba(201,150,58,.35);color:var(--ouro);
+  border-radius:1px;padding:.15rem .5rem;margin-bottom:.8rem;
+}
+.livro-card-desc{font-size:.83rem;color:#5a5450;line-height:1.8;font-weight:300;}
+
+/* ── OUTRAS OBRAS ── */
+.obras{
+  background:#1a1612;
+  padding:6rem 2.5rem;
+}
+.obras-inner{max-width:1100px;margin:0 auto;}
+.obras-header{
+  display:flex;align-items:baseline;gap:2rem;
+  margin-bottom:3rem;
+}
+.obras-label{
+  font-size:.65rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(201,150,58,.5);flex-shrink:0;
+}
+.obras-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,2.8vw,2.2rem);
+  font-weight:700;color:var(--papel);line-height:1.2;
+}
+.obras-title em{font-style:italic;color:var(--ouro-cl);}
+.obras-intro{
+  font-size:.85rem;color:rgba(240,234,216,.35);
+  max-width:65ch;line-height:1.7;font-weight:300;
+  margin-bottom:3rem;margin-left:calc(4rem + 2rem);
+}
+.obras-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:.8rem;
+}
+.obra-card{
+  padding:1.2rem 1rem;
+  border:1px solid rgba(240,234,216,.06);
+  border-radius:1px;
+  display:flex;flex-direction:column;gap:.35rem;
+  transition:background .2s,border-color .2s,transform .2s;
+}
+.obra-card:hover{
+  background:rgba(240,234,216,.04);
+  border-color:rgba(201,150,58,.2);
+  transform:translateY(-3px);
+}
+.obra-stripe{height:2px;border-radius:1px;margin-bottom:.3rem;}
+.obra-ano{
+  font-size:.58rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ouro);
+}
+.obra-h{
+  font-family:'Playfair Display',serif;
+  font-size:.88rem;font-weight:700;
+  color:var(--papel);line-height:1.3;
+}
+.obra-ed{font-size:.68rem;color:rgba(240,234,216,.3);}
+.obra-desc{font-size:.74rem;color:rgba(240,234,216,.5);line-height:1.65;flex:1;font-weight:300;}
+.obra-onde{font-size:.63rem;color:rgba(240,234,216,.22);margin-top:.2rem;line-height:1.4;}
+
+/* ── EQUIPE ── */
+.equipe{
+  padding:6rem 2.5rem;
+  background:var(--papel);
+}
+.equipe-inner{max-width:1100px;margin:0 auto;}
+.equipe-header{
+  display:flex;align-items:baseline;gap:2rem;
+  margin-bottom:3rem;
+}
+.equipe-label{
+  font-size:.65rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro);flex-shrink:0;
+}
+.equipe-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  font-weight:700;color:var(--azul);
+}
+.equipe-cards{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.equipe-card{
+  background:var(--azul);
+  border-radius:2px;
+  padding:2rem 2.2rem;
+  min-width:240px;
+  border-top:2px solid var(--ouro);
+  flex:1;
+}
+.equipe-name-link{
+  text-decoration:none;color:var(--papel);
+  transition:color .15s;
+}
+.equipe-name-link:hover{color:var(--ouro-cl);}
+.equipe-obras-link{
+  display:inline-block;margin-top:.8rem;
+  font-size:.7rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(232,196,106,.55);text-decoration:none;
+  border-bottom:1px solid rgba(232,196,106,.2);
+  padding-bottom:1px;transition:color .15s,border-color .15s;
+}
+.equipe-obras-link:hover{color:var(--ouro-cl);border-color:rgba(232,196,106,.6);}
+.equipe-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--papel);margin-bottom:.3rem;
+}
+.equipe-role{font-size:.75rem;color:rgba(240,234,216,.4);letter-spacing:.04em;}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--azul);
+  padding:3rem 2.5rem;
+  border-top:1px solid rgba(201,150,58,.2);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;
+  font-size:.9rem;font-weight:700;
+  color:rgba(240,234,216,.4);
+}
+.footer-links{display:flex;gap:1rem;}
+.footer-link{
+  font-size:.73rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(240,234,216,.35);
+  border:1px solid rgba(240,234,216,.12);
+  border-radius:1px;padding:.35rem .85rem;
+  text-decoration:none;transition:all .15s;
+}
+.footer-link:hover{color:var(--ouro-cl);border-color:rgba(201,150,58,.35);}
+.footer-copy{
+  font-size:.65rem;color:rgba(240,234,216,.2);
+  letter-spacing:.08em;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:800px){
+  .manifesto-inner{grid-template-columns:1fr;}
+  .livro-destaque,.livro-destaque.rev{grid-template-columns:1fr;direction:ltr;}
+  .livro-destaque.rev .livro-visual{order:-1;}
+  .sobre-cols{grid-template-columns:1fr;}
+  .livros-grid{grid-template-columns:1fr;}
+  .obras-grid{grid-template-columns:repeat(2,1fr);}
+  .equipe-cards{flex-direction:column;}
+  nav{padding:.8rem 1.2rem;}
+  .nav-links{display:none;}
+  .hero,.manifesto,.catalogo,.obras,.equipe,.sobre{padding:4rem 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="https://substackcdn.com/image/fetch/$s_!uGvl!,e_trim:10:white/e_trim:10:transparent/h_88,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F382936cf-bb20-4c51-92b1-8f1ddaec4f02_1244x400.png" alt="Candeia"/>
+    <span class="nav-logo-text">Candeia Editorial</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="vitor.html">Vítor Ribeiro-Santos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#equipe">Equipe</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Candeia Editorial · 2026</span>
+    <h1 class="hero-h1">
+      Trajetos.<br>
+      Distâncias.<br>
+      <em>Livros.</em>
+    </h1>
+    <p class="hero-sub">Trazendo para as páginas o testemunho literário das distâncias.</p>
+    <div class="hero-pills">
+      <a href="https://instagram.com/candeiaeditorial" target="_blank" class="hero-pill">Instagram @candeiaeditorial</a>
+      <a href="https://substack.com/@candeiaeditorial" target="_blank" class="hero-pill">Newsletter Substack</a>
+    </div>
+  </div>
+  <span class="hero-scroll">rolar ↓</span>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="sobre">
+  <div class="manifesto-inner">
+    <span class="manifesto-label">Manifesto</span>
+    <div class="manifesto-body">
+      <p class="manifesto-pull">Uma chama pequena <em>contra o peso da distância.</em></p>
+      <div class="manifesto-cols">
+        <p>A casa fez-se distância, transformou-se, em algum momento, no próprio trajeto. Invertemos os polos: o porto como embargo às viagens futuras, a ânsia incessante de <span class="mk-w">não-ser</span>. O corpo que o mesmo corpo arrasta pela manhã ainda escura, pela noite escura mais uma vez. Como não baixar a testa, não contemplar o dorso dos sapatos? <span class="mk-r">Treme a chama</span>, o mundo não parece valer a aposta.</p>
+        <p>E no entanto, contraintuitiva, <span class="mk-r">essa candeia ainda queima</span> — dentro de umas retinas, no bolso de uma mochila, no fundo de um porta-luvas. A cada passo, esta vida renova suas bordas, e a distância — <span class="mk-g">breve remédio</span> — faz-se casa portátil, rumo reverso. Em nossa <span class="mk-w">transumância</span>, ao menos, contá-la.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-top">
+      <span class="sobre-label">Sobre a Candeia</span>
+      <h2 class="sobre-title">Trazendo para as páginas o testemunho literário <em>das distâncias.</em></h2>
+    </div>
+    <div class="sobre-cols">
+      <div class="sobre-col">
+        <h3>O testemunho literário</h3>
+        <p>Candeia é uma editora que quer iluminar algumas ruas escuras de tantos arredores: trazer ao lume os trajetos, esta porção imensa da vida que sempre é privada de conto, de conhecimento, de proposta.</p>
+      </div>
+      <div class="sobre-col">
+        <h3>A parte desprezada</h3>
+        <p>Percorrer distâncias é justamente a parte desprezada da experiência moderna — a mais violenta, a mais desconfortável. O mundo se expandiu, enquanto o horizonte parece ter se encurtado.</p>
+      </div>
+      <div class="sobre-col">
+        <h3>Migração, êxodo, fluxo</h3>
+        <p>A linha editorial da Candeia quer olhar para o entre-espaço, para vozes e temas que ofereçam perspectivas sobre onde seja possível ainda tecer uma experiência.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="catalogo" id="catalogo">
+  <div class="catalogo-inner">
+    <div class="catalogo-header">
+      <span class="catalogo-label">Catálogo 2026</span>
+      <h2 class="catalogo-title">Nossas publicações</h2>
+    </div>
+
+    <!-- Livro 01 em destaque -->
+    <div class="livro-destaque">
+      <div class="livro-visual" style="padding:0;overflow:hidden;background:#c9963a;">
+        <img src="potosi-capa.png" alt="Capa: Potosí, Concepción, Fernando de la Mora" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="livro-info">
+        <span class="livro-tipo">Zine · Catálogo Candeia · 2026</span>
+        <h3 class="livro-h">Potosí, Concepción,<br>Fernando de la Mora</h3>
+        <p class="livro-autor">Vítor Ribeiro-Santos</p>
+        <span class="livro-badge">Pré-venda aberta</span>
+        <div class="livro-meta">
+          <strong>Sobre o trajeto</strong>
+          <p>Potosí (Bolívia) → Concepción (Chile) → Fernando de la Mora (Paraguai).</p>
+        </div>
+        <div class="livro-meta">
+          <strong>Formato</strong>
+          <p>Zine · La Luz · Agosto/2026 · Pré-venda via Benfeitoria</p>
+        </div>
+        <a href="https://benfeitoria.com/projeto/zine-potosi-concepcion-fernando-de-la-mora-26jd" target="_blank" class="livro-cta">Saiba mais — Pré-venda →</a>
+      </div>
+    </div>
+
+    <!-- Livros 02 e 03 em grid -->
+    <div class="livros-grid">
+      <div class="livro-card">
+        <div class="livro-card-visual">
+          <span class="livro-card-num">02</span>
+        </div>
+        <div>
+          <span class="livro-card-tipo">Zine · 2026</span>
+          <h3 class="livro-card-h">Tipografia de estádio</h3>
+          <p class="livro-card-autor">Bianca Muniz</p>
+          <span class="livro-card-badge">Em breve</span>
+          <p class="livro-card-desc">Letreiros, placares, faixas: a linguagem visual que os estádios inventaram. Um olhar sobre a tipografia que ninguém encomendou mas todos reconhecem.</p>
+        </div>
+      </div>
+      <div class="livro-card">
+        <div class="livro-card-visual">
+          <span class="livro-card-num">03</span>
+        </div>
+        <div>
+          <span class="livro-card-tipo">Livro · 2026</span>
+          <h3 class="livro-card-h">No meio-dia das coisas</h3>
+          <p class="livro-card-autor">Vítor Ribeiro-Santos</p>
+          <span class="livro-card-badge">Em breve</span>
+          <p class="livro-card-desc">Um texto que surge no litoral entre a morte e a língua. Ali onde ambas são formas em que realidade se pronuncia.</p>
+          <p class="livro-card-desc" style="margin-top:.5rem;font-size:.76rem;color:#8c8278;">Novembro/2026 · Candeia Editorial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EQUIPE -->
+<section class="equipe" id="equipe">
+  <div class="equipe-inner">
+    <div class="equipe-header">
+      <span class="equipe-label">Equipe</span>
+      <h2 class="equipe-title">Quem faz a Candeia</h2>
+    </div>
+    <div class="equipe-cards">
+      <div class="equipe-card">
+        <a href="vitor.html" class="equipe-name equipe-name-link">Vítor Ribeiro-Santos</a>
+        <p class="equipe-role">Edição · Revisão · Tradução</p>
+        <a href="vitor.html" class="equipe-obras-link">Ver obras →</a>
+      </div>
+      <div class="equipe-card">
+        <p class="equipe-name">Bianca Muniz</p>
+        <p class="equipe-role">Edição · Comunicação</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Candeia Editorial</span>
+    <div class="footer-links">
+      <a href="https://instagram.com/candeiaeditorial" target="_blank" class="footer-link">Instagram</a>
+      <a href="https://substack.com/@candeiaeditorial" target="_blank" class="footer-link">Substack</a>
+      <a href="https://candeiaeditorial.github.io" target="_blank" class="footer-link">Site</a>
+    </div>
+    <span class="footer-copy">© 2026 Candeia Editorial</span>
+  </div>
+</footer>
+
+</body>
+</html>

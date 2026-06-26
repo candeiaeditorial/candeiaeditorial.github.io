@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>La Luz · Candeia Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --papel:#f0ead8;
+  --azul:#1b4f72;
+  --ouro:#c9963a;
+  --ouro-cl:#e8c46a;
+  --tinta:#1a1612;
+  --cinza:#8c8278;
+  --verde:#2d4a2a;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--tinta);color:var(--papel);overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:rgba(26,22,18,.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(201,150,58,.15);
+}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+.nav-logo img{height:22px;filter:sepia(1) saturate(1.2) hue-rotate(-10deg) brightness(.85);}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;color:rgba(240,234,216,.5);letter-spacing:.02em;}
+.nav-back{
+  font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(240,234,216,.35);text-decoration:none;transition:color .15s;
+}
+.nav-back:hover{color:var(--ouro);}
+
+/* HERO — fundo escuro como campo à noite */
+.hero{
+  min-height:100vh;
+  background:var(--tinta);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:7rem 2.5rem 4rem;
+  position:relative;overflow:hidden;
+}
+/* lâmpada solitária */
+.hero-lamp{
+  position:absolute;
+  top:18%;left:50%;transform:translateX(-50%);
+  width:1px;height:120px;
+  background:linear-gradient(to bottom, rgba(232,196,106,0), rgba(232,196,106,.4));
+  pointer-events:none;
+}
+.hero-lamp::before{
+  content:'';
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:12px;height:12px;
+  background:#e8c46a;
+  border-radius:50%;
+  box-shadow:0 0 60px 30px rgba(232,196,106,.35), 0 0 120px 80px rgba(201,150,58,.15), 0 0 300px 160px rgba(201,150,58,.06);
+}
+.hero-lamp::after{
+  content:'';
+  position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);
+  width:0;height:0;
+  border-left:180px solid transparent;
+  border-right:180px solid transparent;
+  border-top:260px solid rgba(232,196,106,.04);
+}
+
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1;}
+.hero-eyebrow{
+  font-size:.65rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(232,196,106,.45);margin-bottom:1.2rem;display:block;
+}
+.hero-selo{
+  font-size:.72rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(232,196,106,.55);margin-bottom:.5rem;display:block;
+  border-left:2px solid rgba(232,196,106,.3);padding-left:.8rem;
+}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(4rem,12vw,10rem);
+  font-weight:900;line-height:.9;color:var(--papel);
+  letter-spacing:-.03em;margin-bottom:1.5rem;
+}
+.hero-h1 em{
+  font-style:italic;color:var(--ouro-cl);
+}
+.hero-tagline{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1rem,2vw,1.5rem);
+  font-style:italic;font-weight:400;
+  color:rgba(240,234,216,.45);
+  max-width:50ch;line-height:1.65;
+}
+
+/* ORIGEM */
+.origem{
+  padding:7rem 2.5rem;
+  background:var(--papel);
+  position:relative;
+}
+.origem-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start;
+}
+.origem-label{
+  font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro);position:sticky;top:5rem;padding-top:.3rem;
+}
+.origem-body{}
+.origem-pull{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,3vw,2.6rem);
+  font-weight:700;line-height:1.15;color:var(--azul);
+  margin-bottom:2rem;
+}
+.origem-pull em{font-style:italic;font-weight:400;}
+.origem-text p{
+  font-size:.97rem;color:#4a4540;line-height:1.95;font-weight:300;
+  margin-bottom:1.3rem;
+}
+.origem-text p:last-child{margin-bottom:0;}
+.origem-loc{
+  display:inline-block;margin-top:2rem;
+  font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ouro);
+  border-left:2px solid rgba(201,150,58,.35);padding-left:.8rem;
+}
+
+/* MANIFESTO VERDE escuro — campo */
+.campo{
+  background:var(--verde);
+  padding:6rem 2.5rem;
+  position:relative;overflow:hidden;
+}
+.campo::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:500px;height:500px;
+  background:radial-gradient(ellipse,rgba(232,196,106,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.campo-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.campo-label{
+  font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(232,196,106,.45);margin-bottom:2rem;display:block;
+}
+.campo-quote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,3vw,2.5rem);
+  font-weight:700;font-style:italic;
+  color:rgba(240,234,216,.85);line-height:1.3;
+  max-width:70ch;margin-bottom:1.5rem;
+}
+.campo-quote em{font-style:normal;color:var(--ouro-cl);}
+.campo-sub{
+  font-size:.9rem;color:rgba(240,234,216,.45);
+  font-weight:300;line-height:1.7;max-width:60ch;
+}
+
+/* CATÁLOGO La Luz */
+.catalogo{
+  background:var(--papel);
+  padding:6rem 2.5rem;
+}
+.catalogo-inner{max-width:1100px;margin:0 auto;}
+.catalogo-header{
+  display:flex;align-items:baseline;gap:2rem;
+  border-bottom:1px solid rgba(201,150,58,.2);padding-bottom:1rem;margin-bottom:3rem;
+}
+.catalogo-label{font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);}
+.catalogo-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--azul);}
+
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.cat-card{
+  border:1px solid rgba(201,150,58,.18);border-radius:1px;
+  overflow:hidden;transition:border-color .2s,transform .2s;
+}
+.cat-card:hover{border-color:rgba(201,150,58,.45);transform:translateY(-3px);}
+.cat-card-img{
+  aspect-ratio:3/4;
+  background:var(--azul);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.cat-card-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.cat-card-img::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 60%,rgba(232,196,106,.12) 0%,transparent 65%);
+  z-index:1;
+}
+.cat-card-num{
+  font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;
+  font-style:italic;color:rgba(240,234,216,.1);position:relative;z-index:0;
+}
+.cat-card-body{padding:1.2rem 1.3rem;}
+.cat-card-tipo{font-size:.58rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ouro);margin-bottom:.4rem;display:block;}
+.cat-card-h{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--azul);line-height:1.25;margin-bottom:.2rem;}
+.cat-card-autor{font-size:.78rem;color:var(--cinza);margin-bottom:.7rem;}
+.cat-card-badge{
+  display:inline-block;font-size:.58rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid rgba(201,150,58,.35);color:var(--ouro);border-radius:1px;
+  padding:.15rem .5rem;margin-bottom:.7rem;
+}
+.cat-card-desc{font-size:.82rem;color:#5a5450;line-height:1.8;font-weight:300;}
+.cat-card-cta{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.72rem;font-weight:500;letter-spacing:.04em;
+  color:var(--papel);background:var(--azul);
+  border-radius:1px;padding:.4rem 1rem;text-decoration:none;
+  transition:background .2s;margin-top:.9rem;
+}
+.cat-card-cta:hover{background:#2471a3;}
+.cat-card-em-breve{
+  margin-top:.7rem;font-size:.72rem;color:var(--cinza);letter-spacing:.04em;
+  font-style:italic;
+}
+
+/* FOOTER */
+footer{
+  background:var(--tinta);padding:3rem 2.5rem;
+  border-top:1px solid rgba(201,150,58,.15);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+}
+.footer-brand{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:rgba(240,234,216,.3);}
+.footer-links{display:flex;gap:1rem;}
+.footer-link{
+  font-size:.73rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(240,234,216,.3);border:1px solid rgba(240,234,216,.1);
+  border-radius:1px;padding:.35rem .85rem;text-decoration:none;transition:all .15s;
+}
+.footer-link:hover{color:var(--ouro-cl);border-color:rgba(201,150,58,.35);}
+.footer-copy{font-size:.65rem;color:rgba(240,234,216,.18);letter-spacing:.08em;}
+
+@media(max-width:800px){
+  .origem-inner{grid-template-columns:1fr;gap:2rem;}
+  .cat-grid{grid-template-columns:1fr;}
+  nav{padding:.8rem 1.2rem;}
+  .hero,.origem,.campo,.catalogo{padding:4rem 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="candeia.html">
+    <img src="https://substackcdn.com/image/fetch/$s_!uGvl!,e_trim:10:white/e_trim:10:transparent/h_88,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F382936cf-bb20-4c51-92b1-8f1ddaec4f02_1244x400.png" alt="Candeia"/>
+    <span class="nav-logo-text">Candeia Editorial</span>
+  </a>
+  <a href="candeia.html" class="nav-back">← Início</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-lamp"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Candeia Editorial · Selos</span>
+    <span class="hero-selo">Selo de futebol</span>
+    <h1 class="hero-h1">La <em>Luz</em></h1>
+    <p class="hero-tagline">Pelo jogo nos movemos, nos pensamos, nos enunciamos.</p>
+  </div>
+</section>
+
+<!-- ORIGEM -->
+<section class="origem">
+  <div class="origem-inner">
+    <span class="origem-label">A origem do nome</span>
+    <div class="origem-body">
+      <p class="origem-pull">Uma lâmpada acesa numa rua escura<em> de Montevidéu.</em></p>
+      <div class="origem-text">
+        <p>Na rua Pedro Trápani, em Aires Puros, Montevidéu, uma lâmpada permanecia acesa sobre um bar que era a única casa com eletricidade da região. Vista de longe, no alto de uma colina, aquela luz reunia pessoas, sonhos e uma vontade enorme de difundir ideias.</p>
+        <p>Foi ali que nasceu um clube de futebol cujo nome fazia jus à sua origem: La Luz.</p>
+        <p>La Luz é o selo de futebol da Candeia Editorial. Seu nome se remete a esta história — é, literalmente, claro —, a uma viagem por bairros solitários, a um continente que escolheu um jogo como uma lente sobre o mundo, como uma bússola para caminhos ainda desconhecidos.</p>
+        <span class="origem-loc">Aires Puros, Montevidéu · Uruguai</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O JOGO -->
+<section class="campo">
+  <div class="campo-inner">
+    <span class="campo-label">Por que o futebol</span>
+    <p class="campo-quote">Entre os muitos caminhos, um nos interessa de modo especial: <em>o futebol.</em> É daí que surge La Luz.</p>
+    <p class="campo-sub">Pelo jogo nos movemos, nos pensamos, nos enunciamos. Um continente que escolheu um jogo como uma lente sobre o mundo, como uma bússola para caminhos ainda desconhecidos.</p>
+  </div>
+</section>
+
+<!-- CATÁLOGO LA LUZ -->
+<section class="catalogo">
+  <div class="catalogo-inner">
+    <div class="catalogo-header">
+      <span class="catalogo-label">Publicações · La Luz</span>
+      <h2 class="catalogo-title">Catálogo do selo</h2>
+    </div>
+    <div class="cat-grid">
+      <!-- 01 Potosí -->
+      <div class="cat-card">
+        <div class="cat-card-img">
+          <img src="potosi-capa.png" alt="Capa: Potosí, Concepción, Fernando de la Mora"/>
+        </div>
+        <div class="cat-card-body">
+          <span class="cat-card-tipo">Zine · La Luz · 2026</span>
+          <h3 class="cat-card-h">Potosí, Concepción, Fernando de la Mora</h3>
+          <p class="cat-card-autor">Vítor Ribeiro-Santos</p>
+          <span class="cat-card-badge">Pré-venda aberta</span>
+          <p class="cat-card-desc">Potosí (Bolívia) → Concepción (Chile) → Fernando de la Mora (Paraguai). Agosto/2026.</p>
+          <a href="https://benfeitoria.com/projeto/zine-potosi-concepcion-fernando-de-la-mora-26jd" target="_blank" class="cat-card-cta">Pré-venda →</a>
+        </div>
+      </div>
+      <!-- 02 Tipografia -->
+      <div class="cat-card">
+        <div class="cat-card-img">
+          <span class="cat-card-num">02</span>
+        </div>
+        <div class="cat-card-body">
+          <span class="cat-card-tipo">Zine · La Luz · 2026</span>
+          <h3 class="cat-card-h">Tipografia de estádio</h3>
+          <p class="cat-card-autor">Bianca Muniz</p>
+          <span class="cat-card-badge">Em breve</span>
+          <p class="cat-card-desc">Letreiros, placares, faixas: a linguagem visual que os estádios inventaram. Um olhar sobre a tipografia que ninguém encomendou mas todos reconhecem.</p>
+          <p class="cat-card-em-breve">Agosto/2026</p>
+        </div>
+      </div>
+      <!-- Em breve placeholder -->
+      <div class="cat-card" style="border-style:dashed;opacity:.5;">
+        <div class="cat-card-img" style="background:rgba(27,79,114,.3);">
+          <span class="cat-card-num" style="opacity:.4;">?</span>
+        </div>
+        <div class="cat-card-body">
+          <span class="cat-card-tipo">Em desenvolvimento</span>
+          <h3 class="cat-card-h" style="color:var(--cinza);">Próximo título</h3>
+          <p class="cat-card-em-breve">Fique de olho nas novidades.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Candeia Editorial · La Luz</span>
+    <div class="footer-links">
+      <a href="https://instagram.com/candeiaeditorial" target="_blank" class="footer-link">Instagram</a>
+      <a href="https://substack.com/@candeiaeditorial" target="_blank" class="footer-link">Substack</a>
+      <a href="candeia.html" class="footer-link">Início</a>
+    </div>
+    <span class="footer-copy">© 2026 Candeia Editorial</span>
+  </div>
+</footer>
+
+</body>
+</html>

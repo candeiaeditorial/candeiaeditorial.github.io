@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Vítor Ribeiro-Santos · Candeia Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --papel:#f0ead8;
+  --azul:#1b4f72;
+  --ouro:#c9963a;
+  --ouro-cl:#e8c46a;
+  --tinta:#1a1612;
+  --cinza:#8c8278;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--papel);color:var(--tinta);overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 2.5rem;
+  background:rgba(240,234,216,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(201,150,58,.2);
+}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+.nav-logo img{height:22px;filter:sepia(1) saturate(1.2) hue-rotate(-10deg) brightness(.85);}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;color:var(--azul);letter-spacing:.02em;}
+.nav-back{
+  font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--cinza);text-decoration:none;transition:color .15s;
+  display:flex;align-items:center;gap:.4rem;
+}
+.nav-back:hover{color:var(--ouro);}
+
+/* HERO */
+.hero{
+  min-height:60vh;
+  background:var(--tinta);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:7rem 2.5rem 4rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(ellipse at 30% 80%, rgba(201,150,58,.1) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1;}
+.hero-eyebrow{
+  font-size:.65rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(201,150,58,.5);margin-bottom:1rem;display:block;
+}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.8rem,7vw,6rem);
+  font-weight:900;line-height:.95;color:var(--papel);
+  margin-bottom:1rem;letter-spacing:-.02em;
+}
+.hero-h1 em{font-style:italic;color:var(--ouro-cl);display:block;}
+.hero-role{
+  font-size:.85rem;color:rgba(240,234,216,.4);
+  letter-spacing:.1em;font-weight:300;
+}
+
+/* BIO */
+.bio{padding:5rem 2.5rem;background:var(--papel);}
+.bio-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;
+}
+.bio-label{
+  font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ouro);padding-top:.3rem;position:sticky;top:5rem;
+}
+.bio-text p{
+  font-size:1rem;color:#4a4540;line-height:1.95;font-weight:300;
+  margin-bottom:1.2rem;
+}
+.bio-text p:last-child{margin-bottom:0;}
+
+/* OBRAS */
+.obras{background:var(--azul);padding:5rem 2.5rem;position:relative;overflow:hidden;}
+.obras::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:400px;height:400px;
+  background:radial-gradient(ellipse,rgba(232,196,106,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.obras-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.obras-header{
+  display:flex;align-items:baseline;gap:2rem;
+  margin-bottom:3rem;
+  border-bottom:1px solid rgba(201,150,58,.2);
+  padding-bottom:1rem;
+}
+.obras-label{
+  font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(201,150,58,.5);flex-shrink:0;
+}
+.obras-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,2.8vw,2.2rem);
+  font-weight:700;color:var(--papel);line-height:1.2;
+}
+.obras-title em{font-style:italic;color:var(--ouro-cl);}
+
+.obras-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:.9rem;
+}
+.obra-card{
+  padding:1.2rem 1rem;
+  border:1px solid rgba(240,234,216,.07);
+  border-radius:1px;
+  display:flex;flex-direction:column;gap:.35rem;
+  transition:background .2s,border-color .2s,transform .2s;
+}
+.obra-card:hover{
+  background:rgba(240,234,216,.05);
+  border-color:rgba(201,150,58,.25);
+  transform:translateY(-3px);
+}
+.obra-stripe{height:2px;border-radius:1px;margin-bottom:.35rem;flex-shrink:0;}
+.obra-ano{font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);}
+.obra-h{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--papel);line-height:1.3;}
+.obra-ed{font-size:.68rem;color:rgba(240,234,216,.3);}
+.obra-desc{font-size:.75rem;color:rgba(240,234,216,.52);line-height:1.65;flex:1;font-weight:300;}
+.obra-onde{font-size:.63rem;color:rgba(240,234,216,.22);margin-top:.2rem;line-height:1.4;}
+
+/* também na candeia */
+.tambem{padding:5rem 2.5rem;background:var(--papel);}
+.tambem-inner{max-width:1100px;margin:0 auto;}
+.tambem-header{
+  display:flex;align-items:baseline;gap:2rem;
+  margin-bottom:3rem;
+  border-bottom:1px solid rgba(201,150,58,.2);
+  padding-bottom:1rem;
+}
+.tambem-label{font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro);}
+.tambem-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--azul);}
+.tambem-title em{font-style:italic;}
+.tambem-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.tambem-card{
+  display:grid;grid-template-columns:140px 1fr;gap:1.5rem;align-items:start;
+  padding:1.5rem;border:1px solid rgba(201,150,58,.18);border-radius:1px;
+  transition:border-color .2s,background .2s;
+}
+.tambem-card:hover{border-color:rgba(201,150,58,.45);background:rgba(27,79,114,.03);}
+.tambem-card-visual{
+  aspect-ratio:3/4;background:var(--azul);border-radius:1px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.tambem-card-visual img{width:100%;height:100%;object-fit:cover;display:block;}
+.tambem-card-visual::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 60%,rgba(232,196,106,.15) 0%,transparent 65%);
+}
+.tambem-card-num{
+  font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;
+  font-style:italic;color:rgba(240,234,216,.15);position:relative;z-index:1;
+}
+.tambem-card-tipo{font-size:.58rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ouro);margin-bottom:.4rem;display:block;}
+.tambem-card-h{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--azul);line-height:1.2;margin-bottom:.2rem;}
+.tambem-card-autor{font-size:.8rem;color:var(--cinza);margin-bottom:.6rem;}
+.tambem-card-badge{
+  display:inline-block;font-size:.58rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid rgba(201,150,58,.35);color:var(--ouro);border-radius:1px;
+  padding:.15rem .5rem;margin-bottom:.8rem;
+}
+.tambem-card-desc{font-size:.83rem;color:#5a5450;line-height:1.8;font-weight:300;}
+.tambem-cta{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.73rem;font-weight:500;letter-spacing:.04em;
+  color:var(--papel);background:var(--azul);
+  border-radius:1px;padding:.45rem 1.1rem;text-decoration:none;
+  transition:background .2s;margin-top:.8rem;
+}
+.tambem-cta:hover{background:#2471a3;}
+
+/* FOOTER */
+footer{
+  background:var(--azul);padding:3rem 2.5rem;
+  border-top:1px solid rgba(201,150,58,.2);
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+}
+.footer-brand{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:rgba(240,234,216,.4);}
+.footer-links{display:flex;gap:1rem;}
+.footer-link{
+  font-size:.73rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(240,234,216,.35);border:1px solid rgba(240,234,216,.12);
+  border-radius:1px;padding:.35rem .85rem;text-decoration:none;transition:all .15s;
+}
+.footer-link:hover{color:var(--ouro-cl);border-color:rgba(201,150,58,.35);}
+.footer-copy{font-size:.65rem;color:rgba(240,234,216,.2);letter-spacing:.08em;}
+
+@media(max-width:800px){
+  .bio-inner{grid-template-columns:1fr;gap:2rem;}
+  .obras-grid{grid-template-columns:repeat(2,1fr);}
+  .tambem-cards{grid-template-columns:1fr;}
+  nav{padding:.8rem 1.2rem;}
+  .hero,.bio,.obras,.tambem{padding:4rem 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="candeia.html">
+    <img src="https://substackcdn.com/image/fetch/$s_!uGvl!,e_trim:10:white/e_trim:10:transparent/h_88,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F382936cf-bb20-4c51-92b1-8f1ddaec4f02_1244x400.png" alt="Candeia"/>
+    <span class="nav-logo-text">Candeia Editorial</span>
+  </a>
+  <a href="candeia.html" class="nav-back">← Início</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Equipe Candeia · Autor</span>
+    <h1 class="hero-h1">
+      Vítor<br>
+      <em>Ribeiro-Santos</em>
+    </h1>
+    <p class="hero-role">Edição · Revisão · Tradução</p>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bio">
+  <div class="bio-inner">
+    <span class="bio-label">Trajetória</span>
+    <div class="bio-text">
+      <p>Além da Candeia Editorial, que co-funda, Vítor Ribeiro-Santos tem uma trajetória editorial em curso por diversas casas — do ensaio literário sobre futebol à ficção, da crónica de viagem ao romance filosófico.</p>
+      <p>Ao longo de mais de uma década de escrita, seus livros percorrem territórios distintos mas confluentes: a experiência afetiva do jogo, o desconhecimento como posição epistemológica, a perda e a continuidade neste continente, e o testemunho das distâncias que fundam a Candeia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OBRAS -->
+<section class="obras">
+  <div class="obras-inner">
+    <div class="obras-header">
+      <span class="obras-label">Outras editoras</span>
+      <h2 class="obras-title">Obras de <em>Vítor Ribeiro-Santos</em></h2>
+    </div>
+    <div class="obras-grid">
+      <div class="obra-card">
+        <div class="obra-stripe" style="background:#7a7570"></div>
+        <span class="obra-ano">2024</span>
+        <h3 class="obra-h">/um mapa das ruínas/</h3>
+        <span class="obra-ed">Editora Mondru</span>
+        <p class="obra-desc">12 textos em primeira pessoa, sem marcação de gênero, tempo e cenário, a versar sobre perda e continuidade neste continente. Escrito ao longo de 10 anos.</p>
+        <p class="obra-onde">Compre com o autor ou no site da editora Mondru.</p>
+      </div>
+      <div class="obra-card">
+        <div class="obra-stripe" style="background:#8b2635"></div>
+        <span class="obra-ano">2025</span>
+        <h3 class="obra-h">Apologia ao futebol menor</h3>
+        <span class="obra-ed">Independente</span>
+        <p class="obra-desc">A experiência do bairro contraposta à do Grande Jogo. Como o futebol surge de uma experiência afetiva e assim se transcreve na forma como uma pessoa conta a própria história.</p>
+        <p class="obra-onde">Compre com o autor, na Livraria Barrilete ou em eventos da Deriva dos Livros Errantes.</p>
+      </div>
+      <div class="obra-card">
+        <div class="obra-stripe" style="background:#4a5240"></div>
+        <span class="obra-ano">2022/25</span>
+        <h3 class="obra-h">Pronunciar o Chão</h3>
+        <span class="obra-ed">Ed. Campo ou Bola · 2ª ed.</span>
+        <p class="obra-desc">20 ensaios com prefácio de Paulo Junior. O futebol como fenômeno estético, ontológico e político.</p>
+        <p class="obra-onde">Compre com o autor, na Livraria Barrilete ou no site da editora Campo ou Bola.</p>
+      </div>
+      <div class="obra-card">
+        <div class="obra-stripe" style="background:#6b4a3a"></div>
+        <span class="obra-ano">2024</span>
+        <h3 class="obra-h">Thales, ou o Desconhecimento</h3>
+        <span class="obra-ed">Ed. Minimalismos</span>
+        <p class="obra-desc">Reconstrói o conceito de alteridade a partir das posições da sala de aula moderna. Os capítulos 0, 1 e 2 simbolizam dinâmicas de passagem de registro e voz narrativos.</p>
+        <p class="obra-onde">Compre no site da editora Minimalismos.</p>
+      </div>
+      <div class="obra-card">
+        <div class="obra-stripe" style="background:#c9963a"></div>
+        <span class="obra-ano">2026</span>
+        <h3 class="obra-h">Imagens da Alegre Melancolia</h3>
+        <span class="obra-ed">Ed. Campo ou Bola</span>
+        <p class="obra-desc">Futebol de 6 países sul-americanos — mais de 10 mil km de ônibus. Da 4ª divisão argentina à Copa Libertadores, o testemunho de um jogo que não cessa de produzir sentido.</p>
+        <p class="obra-onde">Compre com o autor ou no site da editora Campo ou Bola.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAMBÉM NA CANDEIA -->
+<section class="tambem">
+  <div class="tambem-inner">
+    <div class="tambem-header">
+      <span class="tambem-label">Catálogo Candeia</span>
+      <h2 class="tambem-title">Também pela <em>Candeia</em></h2>
+    </div>
+    <div class="tambem-cards">
+      <div class="tambem-card">
+        <div class="tambem-card-visual">
+          <img src="potosi-capa.png" alt="Capa: Potosí, Concepción, Fernando de la Mora"/>
+        </div>
+        <div>
+          <span class="tambem-card-tipo">Zine · 2026</span>
+          <h3 class="tambem-card-h">Potosí, Concepción, Fernando de la Mora</h3>
+          <p class="tambem-card-autor">Vítor Ribeiro-Santos</p>
+          <span class="tambem-card-badge">Pré-venda aberta</span>
+          <p class="tambem-card-desc">Potosí (Bolívia) → Concepción (Chile) → Fernando de la Mora (Paraguai). Zine · La Luz · Agosto/2026.</p>
+          <a href="https://benfeitoria.com/projeto/zine-potosi-concepcion-fernando-de-la-mora-26jd" target="_blank" class="tambem-cta">Pré-venda →</a>
+        </div>
+      </div>
+      <div class="tambem-card">
+        <div class="tambem-card-visual">
+          <span class="tambem-card-num">03</span>
+        </div>
+        <div>
+          <span class="tambem-card-tipo">Livro · 2026</span>
+          <h3 class="tambem-card-h">No meio-dia das coisas</h3>
+          <p class="tambem-card-autor">Vítor Ribeiro-Santos</p>
+          <span class="tambem-card-badge">Em breve</span>
+          <p class="tambem-card-desc">Um texto que surge no litoral entre a morte e a língua. Ali onde ambas são formas em que realidade se pronuncia.</p>
+          <p class="tambem-card-desc" style="margin-top:.5rem;font-size:.76rem;color:#8c8278;">Novembro/2026 · Candeia Editorial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Candeia Editorial</span>
+    <div class="footer-links">
+      <a href="https://instagram.com/candeiaeditorial" target="_blank" class="footer-link">Instagram</a>
+      <a href="https://substack.com/@candeiaeditorial" target="_blank" class="footer-link">Substack</a>
+      <a href="https://candeiaeditorial.github.io" target="_blank" class="footer-link">Site</a>
+    </div>
+    <span class="footer-copy">© 2026 Candeia Editorial</span>
+  </div>
+</footer>
+
+</body>
+</html>
